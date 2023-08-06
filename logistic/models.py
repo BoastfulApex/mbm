@@ -13,6 +13,10 @@ class Slider(models.Model):
     image = models.ImageField(null=True, blank=True)
     link = models.URLField(null=True)
 
+    def __str__(self):
+        return self.name_uz
+
+
 class News(models.Model):
     name_uz = models.CharField(max_length=100, null=True, blank=True)
     name_ru = models.CharField(max_length=100, null=True, blank=True)
@@ -24,6 +28,9 @@ class News(models.Model):
     description_en = models.TextField(max_length=3000, null=True, blank=True)
     description_mn = models.TextField(max_length=3000, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name_uz
 
 
 class ServiceCategory(models.Model):
@@ -40,6 +47,9 @@ class ServiceCategory(models.Model):
     image2 = models.ImageField(null=True, blank=True)
     image3 = models.ImageField(null=True, blank=True)
 
+    def __str__(self):
+        return self.name_uz
+
 
 class Service(models.Model):
     name_uz = models.CharField(max_length=100, null=True, blank=True)
@@ -55,6 +65,9 @@ class Service(models.Model):
     image2 = models.ImageField(null=True, blank=True)
     image3 = models.ImageField(null=True, blank=True)
 
+    def __str__(self):
+        return self.name_uz
+
 
 class FAQ(models.Model):
     question_uz = models.TextField(max_length=3000, null=True, blank=True)
@@ -66,6 +79,9 @@ class FAQ(models.Model):
     answer_en = models.TextField(max_length=3000, null=True, blank=True)
     answer_mn = models.TextField(max_length=3000, null=True, blank=True)
 
+    def __str__(self):
+        return self.question_uz
+
 
 class Comment(models.Model):
     author = models.CharField(max_length=100, null=True, blank=True)
@@ -75,6 +91,10 @@ class Comment(models.Model):
     comment_en = models.TextField(max_length=3000, null=True, blank=True)
     comment_mn = models.TextField(max_length=3000, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.comment_uz
+
 
 class Partner(models.Model):
     name_uz = models.CharField(max_length=100, null=True, blank=True)
@@ -86,3 +106,6 @@ class Partner(models.Model):
     description_en = models.TextField(max_length=3000, null=True, blank=True)
     description_mn = models.TextField(max_length=3000, null=True, blank=True)
     image = models.ImageField(null=True, blank=True)
+
+    def __str__(self):
+        return self.name_uz
